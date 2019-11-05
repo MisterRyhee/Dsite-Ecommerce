@@ -1,0 +1,66 @@
+{
+  "name": "dsite-ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "bootstrap": "^4.3.1",
+    "css-hot-loader": "^1.4.4",
+    "express": "^4.17.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "path": "^0.12.7",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "@hot-loader/react-dom": "^16.10.2",
+    "del-cli": "^3.0.0",
+    "node-sass": "^4.13.0",
+    "open": "^7.0.0",
+    "open-cli": "^5.0.0",
+    "react-hot-loader": "^4.12.15",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "scripts": {
+    "dev": "run-s clean bundle:dev start:dev",
+    "bundle:dev": "run-s bundle:dev:config bundle:dev:server",
+    "bundle:dev:server": "webpack --mode development --config webpack.server.config.js",
+    "bundle:dev:config": "webpack --mode development --config webpack.dev.config.js --open",
+    "start:dev": "run-p express start:dev:open",
+    "start:dev:open": "open-cli http://localhost:3000",
+    "express": "node ./dist/server.js",
+    "scss": "node-sass --output-style compressed --include-path scss src/Styles/style.scss dist/style.css",
+    "autoprefixer": "postcss -u autoprefixer -r dist/*",
+    "clean": "run-p clean:js clean:css clean:html",
+    "clean:js": "del-cli dist/**/*.js | del-cli dist/**/*.map",
+    "clean:css": "del-cli dist/**/*.css",
+    "clean:html": "del-cli dist/**/*.html"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
