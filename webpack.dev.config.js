@@ -1,26 +1,25 @@
-const path = require( 'path' );
-const webpack = require( 'webpack' );
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
-const WebpackShellPlugin = require( 'webpack-shell-plugin' );
+var path = require( 'path' );
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+var MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = {
   entry: {
     main: [
-      'react-hot-loader/patch',
-      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-      './src/index.jsx'
+      './src/index.jsx',
+      './src/Styles/style.js'
     ]
   },
   output: {
     path: path.join( __dirname, 'dist' ),
     publicPath: '/',
     filename: '[name].js',
-    hotUpdateChunkFilename: 'hot/hot-update.js',
-    hotUpdateMainFilename:  'hot/hot-update.json'
   },
-  mode: 'development',
-  target: 'web',
+  devServer: {
+    contentBase: path.join( __dirname, 'dist' ),
+    compress: true,
+    port: 3000
+  },
   module: {
     rules: [
       {
@@ -48,13 +47,14 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          'css-hot-loader',
           'style-loader',
           'css-loader',
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [require('autoprefixer')]
+              plugins: () => [
+                require ( 'autoprefixer' )
+              ]
             }
           },
           'sass-loader'
@@ -69,19 +69,24 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html',
-      excludeChunks: [ 'server' ]
+      filename: './index.html'
     }),
     new MiniCSSExtractPlugin({
-      filename: '[name].css',
+      filename: './[name].css',
       chunkFilename: '[id].css'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
+    extensions: [ '.jsx', '.js' ],
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
-  }
+  },
+  mode: 'development',
 };
