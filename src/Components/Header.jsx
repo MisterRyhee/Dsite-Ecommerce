@@ -7,11 +7,14 @@ export default function HeaderComponent( props ){
         Company Name
       </h5>
       <nav className="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
+        <a className="p-2 text-dark" href="#">Features</a>
+        <a className="p-2 text-dark" href="#">Enterprise</a>
+        <a className="p-2 text-dark" href="#">Support</a>
+        <a className="p-2 text-dark" href="#">Pricing</a>
       </nav>
+      <a className="btn btn-outline-primary" href="#">
+        Sign Up
+      </a>
     </header>
   )
 };
