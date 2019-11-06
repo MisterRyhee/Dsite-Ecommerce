@@ -6,8 +6,8 @@ import AlbumComponent from '../Components/Album.jsx';
 export default function HomePage() {
   return (
     <div>
-    <JumboComponent/>
-    <AlbumComponent/>
+      <JumboComponent/>
+      <AlbumComponent/>
     </div>
   );
 };

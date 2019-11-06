@@ -1,20 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import HomePage from './Scenes/HomePage.jsx';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import HeaderComponent from './Components/Header.jsx';
 import FooterComponent from './Components/Footer.jsx';
+import HomePage from './Scenes/HomePage.jsx';
+import PaymentPage from './Scenes/PaymentPage.jsx';
 
 export default function App( props ){
   return(
-    <Router>
+    <BrowserRouter>
       <HeaderComponent/>
       <main>
-        <Route
-          path="/"
-          render={ ( props ) => <HomePage /> }
-        />
+        <Switch>
+          <Route
+            exact path="/"
+            component={HomePage}
+          />
+          <Route
+            path="/payment"
+            component={PaymentPage}
+          />
+        </Switch>
       </main>
       <FooterComponent/>
-    </Router>
+    </BrowserRouter>
   )
 };

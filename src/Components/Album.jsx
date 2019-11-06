@@ -7,7 +7,7 @@ export default function AlbumComponent( props ){
       <div className="container">
         <div className="row">
           { Configs.Items.map(( result, i ) => (
-            <div className="col-md-4">
+            <div className="col-md-4" key={i}>
               <div className="card mb-4 box-shadow">
                 <img className="card-img-top" src={result.src} alt=""/>
                 <div className="card-body">
