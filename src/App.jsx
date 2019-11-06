@@ -8,10 +8,12 @@ export default function App( props ){
   return(
     <Router>
       <HeaderComponent/>
-      <Route
-        path="/"
-        render={ ( props ) => <HomePage /> }
-      />
+      <main>
+        <Route
+          path="/"
+          render={ ( props ) => <HomePage /> }
+        />
+      </main>
       <FooterComponent/>
     </Router>
   )

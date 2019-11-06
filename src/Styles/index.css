@@ -19,3 +19,7 @@ code {
 footer {
   padding: 0 1em;
 }
+
+.jumbotron {
+  background-color: #FFF;
+}

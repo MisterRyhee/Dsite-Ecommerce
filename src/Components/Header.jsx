@@ -16,5 +16,5 @@ export default function HeaderComponent( props ){
         Sign Up
       </a>
     </header>
-  )
+  );
 };
