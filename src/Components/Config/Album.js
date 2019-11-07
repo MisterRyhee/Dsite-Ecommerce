@@ -1,7 +1,5 @@
-
-
 module.exports = {
-  "Items": [
+  "items": [
     {
       "title": "item1",
       "src": "https://picsum.photos/seed/picsum/350/225",

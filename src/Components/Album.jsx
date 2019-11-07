@@ -6,7 +6,7 @@ export default function AlbumComponent( props ){
     <section className="album py-5">
       <div className="container">
         <div className="row">
-          { Configs.Items.map(( result, i ) => (
+          { Configs.items.map(( result, i ) => (
             <div className="col-md-4" key={i}>
               <div className="card mb-4 box-shadow">
                 <img className="card-img-top" src={result.src} alt=""/>

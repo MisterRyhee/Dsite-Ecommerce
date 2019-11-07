@@ -1,9 +1,12 @@
 var path = require( 'path' );
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+var AddAssetHtmlPlugin = require( 'add-asset-html-webpack-plugin' );
 var MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = {
+  mode: 'development',
+  devtool: '#sourcemap',
   entry: {
     main: [
       './src/index.jsx',
@@ -11,14 +14,16 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join( __dirname, 'dist' ),
+    path: path.join( __dirname, 'build' ),
     publicPath: '/',
     filename: '[name].js',
   },
+  devtool: 'source-map',
   devServer: {
-    contentBase: path.join( __dirname, 'dist' ),
+    contentBase: path.join( __dirname, 'build' ),
     compress: true,
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -68,8 +73,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      template: './src/index.html'
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve( __dirname, './build/*.dll.js' ),
     }),
     new MiniCSSExtractPlugin({
       filename: './[name].css',
@@ -87,6 +95,5 @@ module.exports = {
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
-  },
-  mode: 'development',
+  }
 };

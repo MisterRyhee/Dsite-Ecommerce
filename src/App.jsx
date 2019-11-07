@@ -11,13 +11,13 @@ export default function App( props ){
     <BrowserRouter>
       <HeaderComponent/>
       <main>
-        <Switch>
+        <Switch> 
           <Route
             exact path="/"
             component={HomePage}
           />
           <Route
-            path="/payment"
+            exact path="/payment"
             component={PaymentPage}
           />
         </Switch>
