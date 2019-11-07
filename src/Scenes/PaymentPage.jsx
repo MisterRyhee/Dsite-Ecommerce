@@ -1,5 +1,6 @@
 import React from 'react';
 import PaymentCartComponent from '../Components/PaymentCart.jsx';
+import PaymentFormComponent from '../Components/PaymentForm.jsx';
 
 export default function PaymentPage() {
   return(
@@ -15,6 +16,7 @@ export default function PaymentPage() {
       </div>
       <div className="row">
         <PaymentCartComponent/>
+        <PaymentFormComponent/>
       </div>
     </div>
   );

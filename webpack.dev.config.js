@@ -85,7 +85,9 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: [ 'popper.js', 'default' ]
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()

@@ -9,10 +9,9 @@ import App from './App.jsx';
 const render = () => {
   ReactDOM.render(
     <App />,
-    document.getElementById( 'app' ));
+    document.getElementById( 'App' ));
 };
 render();
-
 
 // Needed for Hot Module Replacement
 if( module.hot ) {
@@ -22,9 +21,9 @@ if( module.hot ) {
   });
   */
 
-  module.hot.accept( './app', () => {
+  module.hot.accept( './App', () => {
     console.clear();
-    const NextApp = require('./app').default; // Get the updated code
+    const NextApp = require('./App').default; // Get the updated code
     render(NextApp);
   });
 }

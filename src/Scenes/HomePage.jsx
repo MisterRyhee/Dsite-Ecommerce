@@ -1,13 +1,10 @@
 import React from 'react';
-import '../Styles/App.css';
-import JumboComponent from '../Components/Jumbotron.jsx';
-import AlbumComponent from '../Components/Album.jsx';
+import CarouselComponent from '../Components/Carousel.jsx';
 
 export default function HomePage() {
   return (
     <div>
-      <JumboComponent/>
-      <AlbumComponent/>
+      <CarouselComponent/>
     </div>
   );
 };

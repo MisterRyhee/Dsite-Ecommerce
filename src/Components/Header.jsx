@@ -10,11 +10,11 @@ export default function HeaderComponent( props ){
 
       <nav className="my-2 my-md-0 mr-md-3">
         <Link className="p-2 text-dark" to="/payment">Payments</Link>
-        <a className="p-2 text-dark" href="#">Enterprise</a>
-        <a className="p-2 text-dark" href="#">Support</a>
-        <a className="p-2 text-dark" href="#">Pricing</a>
+        <a className="p-2 text-dark" href="/#">Enterprise</a>
+        <a className="p-2 text-dark" href="/#">Support</a>
+        <a className="p-2 text-dark" href="/#">Pricing</a>
       </nav>
-      <a className="btn btn-outline-primary" href="#">
+      <a className="btn btn-outline-primary" href="/#">
         Sign Up
       </a>
     </header>

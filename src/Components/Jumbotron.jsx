@@ -10,8 +10,8 @@ export default function JumboComponent( props ){
           Make it short and sweet, but not too short so folks don't simply skip over it entirely.
         </p>
         <p>
-          <a className="btn btn-primary ml-2" href="#">Main call to action</a>
-          <a className="btn btn-secondary ml-2" href="#">Secondary action</a>
+          <a className="btn btn-primary ml-2" href="/#">Main call to action</a>
+          <a className="btn btn-secondary ml-2" href="/#">Secondary action</a>
         </p>
       </div>
     </section>
