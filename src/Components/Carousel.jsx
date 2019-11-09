@@ -1,9 +1,10 @@
 import React from 'react';
+import 'bootstrap';
 import Configs from './Config/HomeCarousel';
 
 export default function CarouselComponent( props ){
   return(
-    <section id="myCarousel" className="carousel slide" data-ride="carousel">
+    <div id="myCarousel" className="carousel slide" data-ride="carousel">
       <ol className="carousel-indicators">
       { Configs.slides.map(( result, i ) => {
         if( i === 0 ){
@@ -20,7 +21,7 @@ export default function CarouselComponent( props ){
           return (
           <div className="carousel-item active" key={"carouselInner" + i}>
             <div className="pickgradient">
-              <img className="first-slide" src={result.src} alt="First slide"/>
+              <img className={result.iteration} src={result.src} alt={result.iteration}/>
             </div>
             <div className="container">
               <div className="carousel-caption text-left">
@@ -35,7 +36,7 @@ export default function CarouselComponent( props ){
           return (
           <div className="carousel-item" key={"carouselInner" + i}>
             <div className="pickgradient">
-              <img className="first-slide" src={result.src} alt="First slide"/>
+              <img className={result.iteration} src={result.src} alt={result.iteration}/>
             </div>
             <div className="container">
               <div className="carousel-caption text-left">
@@ -58,6 +59,6 @@ export default function CarouselComponent( props ){
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="sr-only">Next</span>
       </a>
-    </section>
+    </div>
   );
 };
