@@ -14,12 +14,13 @@ export default function HomePage() {
           return (
           <MarketingComponent
             col={result.col}
-            src={result.src}
+            imgSrc={result.imgSrc}
             alt={result.alt}
             size={result.size}
             title={result.title}
             desc={result.desc}
             btn={result.btn}
+            btnSrc={result.btnSrc}
             key={"HomeMarket" + i}/>
           )}) }
         </div>
@@ -33,7 +34,8 @@ export default function HomePage() {
           title={result.title}
           titleLight={result.titleLight}
           desc={result.desc}
-          src={result.src}
+          imgSrc={result.imgSrc}
+          linkSrc={result.linkSrc}
           alt={result.alt}
           key={"HomeFeat" + i}/>
       )})}
