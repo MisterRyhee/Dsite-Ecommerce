@@ -1,45 +1,27 @@
 import React from 'react';
-import CarouselComponent from '../Components/Carousel.jsx';
-import MarketingComponent from '../Components/Marketing.jsx';
-import FeaturetteComponent from '../Components/Featurette.jsx';
-import Configs from './Config/HomePage';
+import PageConfigs from './Config/HomePage';
+import FrontProductComponent from '../Components/FrontProduct.jsx';
 
 export default function HomePage() {
   return (
     <div>
-      <CarouselComponent/>
-      <div className="container marketing">
-        <div className="row">
-          { Configs.marketing.map(( result, i ) => {
-          return (
-          <MarketingComponent
-            col={result.col}
-            imgSrc={result.imgSrc}
-            alt={result.alt}
-            size={result.size}
-            title={result.title}
-            desc={result.desc}
-            btn={result.btn}
-            btnSrc={result.btnSrc}
-            key={"HomeMarket" + i}/>
-          )}) }
+      <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+        <div className="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 className="display-4 font-weight-normal">Punny headline</h1>
+          <p className="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+          <a className="btn btn-primary" href="/#">Coming soon</a>
         </div>
       </div>
-      { Configs.featurettes.map(( result, i ) => {
-      return (
-        <FeaturetteComponent
-          textCol={result.textCol}
-          imgCol={result.imgCol}
-          shifted={result.shifted}
-          title={result.title}
-          titleLight={result.titleLight}
-          desc={result.desc}
-          imgSrc={result.imgSrc}
-          linkSrc={result.linkSrc}
-          alt={result.alt}
-          key={"HomeFeat" + i}/>
-      )})}
-      <hr className="featurette-divider"/>
+
+      <div className="row full-width margin-zero">
+        { PageConfigs.adverts.map(( result, i ) => {
+        return(
+          <FrontProductComponent
+            bgClasses={result.bgClasses}
+            boxClasses={result.boxClasses}/>
+        );
+        }) }
+      </div>
     </div>
   );
 };

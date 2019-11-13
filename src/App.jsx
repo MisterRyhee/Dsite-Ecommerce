@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HeaderComponent from './Components/Header.jsx';
 import FooterComponent from './Components/Footer.jsx';
 import HomePage from './Scenes/HomePage.jsx';
+import FeaturePage from './Scenes/FeaturePage.jsx';
 import PaymentPage from './Scenes/PaymentPage.jsx';
 import CategoryPage from './Scenes/CategoryPage.jsx';
 import ProductPage from './Scenes/ProductPage.jsx';
@@ -23,8 +24,12 @@ export default function App( props ){
             component={CategoryPage}
           />
           <Route
-            exact path="/products"
+            exact path="/product/:id"
             component={ProductPage}
+          />
+          <Route
+            exact path="/features"
+            component={FeaturePage}
           />
           <Route
             exact path="/"
